@@ -26,10 +26,9 @@ The objective of this lab is to:
 ## Installation & Setup
 
 ### Kali Linux Setup
--Download the Debian 13.x 64-bit iso from https://www.kali.org/get-kali/#kali-platforms
--In VMware create new machine.
--After installation run 
-sudo apt update && sudo apt upgrade -y to apply any updates.
+-Download the Debian 13.x 64-bit iso from https://www.kali.org/get-kali/#kali-platforms.  
+-In VMware create new machine.  
+-After installation run sudo apt update && sudo apt upgrade -y to apply any updates.  
 -Run sudo apt install open-vm-tools open-vm-tools-desktop -y to install VMware tools
 
 ### Windows 10 Setup
