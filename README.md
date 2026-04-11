@@ -36,4 +36,16 @@ The objective of this lab is to:
 -Run net start wazuh in Powershell.
 
 ### Wazuh SIEM (Ubuntu Server 22.04 LTS)
+-Downloaded the Wazuh installation script:
+''''bash 
+curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh  
+-Made the script executable:  
+chmod +x wazuh-install.sh  
+Ran the installation:  
+sudo bash wazuh-install.sh  
+-Verified services:  
+sudo systemctl status wazuh-manager  
+sudo systemctl status wazuh-indexer  
+sudo systemctl status wazuh-dashboard  
+sudo systemctl status filebeat
 
