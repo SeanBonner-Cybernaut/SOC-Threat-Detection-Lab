@@ -48,3 +48,18 @@ curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh
 --sudo systemctl status wazuh-dashboard  
 --sudo systemctl status filebeat
 
+## Log Ingestion Verification
+-Navigated to:  
+--Explore  
+---Discover  
+Confirmed that logs were being ingested from the Windows agent.
+
+## Current Status
+The SIEM environment is fully operational:  
+-Wazuh Manager, Indexer, Dashboard, and Filebeat are running.  
+-Windows agent successfully connected.  
+-Logs are being ingested and analyzed.
+
+## Author
+Sean M. Bonner
+
