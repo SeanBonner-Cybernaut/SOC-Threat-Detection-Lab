@@ -111,6 +111,15 @@ This simulation confirmed that:
 ---
 
 ### Evidence
+![Event 4625 Wazuh](Screenshots/Event 4625 Wazuh.png)
+
+![Eventvwr 4625](Screenshots/Eventvwr 4625.png)
+
+![Fakeuser](Screenshots/Fakeuser.png)
+
+![Rule level](Screenshots/Rule level.png)
+
+![Wazuh Alerts](Screenshots/Wazuh Alerts.png)
 -Event Viewer showing Event ID 4625  
 -Wazuh Discovery view showing corresponding alerts  
 -Expanded log details with event fields
