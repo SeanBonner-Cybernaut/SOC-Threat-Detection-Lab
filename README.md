@@ -60,6 +60,65 @@ The SIEM environment is fully operational:
 -Windows agent successfully connected.  
 -Logs are being ingested and analyzed.
 
+---
+
+## Attack Simulation: Failed Login Attempts
+### Objective  
+Simulate unauthorized access attemps against a Windows 10 endpoint and verify detection within the Wazuh SIEM.
+
+---
+
+### Method
+Failed login attempts were generated using the Windows 'runas' command with invalid credentials.  
+
+Steps:  
+1. Opened Powershell (Run as Administrator)
+2. Executed the following command:
+
+   runas /user:fakeuser cmd
+
+3. Entered an incorrect password when prompted
+4. Repeated the process three times to simulate multiple failed login attempts
+
+---
+
+### Detection
+The activity generated Windows Security Event Logs, which were successfully ingested by Wazuh.  
+
+-**Event ID:** 4625 (Failed Logon)  
+-**Wazuh Alert Level:** 5 (Medium severity)  
+-**Agent:** Windows 10 endpoint  
+
+Key fields observed:  
+- 'rule.description': Windows logon failure
+- 'rule.level': 5
+- 'agent name': Win10-Lab
+- 'data.win.system.eventID': 4625
+  
+---
+
+### Analysis
+The repeated failed login attempts indicate potential unauthorized access activity. While the attempts used a non-existent user account, they still triggered authentication failure events  with Windows.
+
+---
+
+### Outcome
+This simulation confirmed that:  
+-Windows Security logs are being generated correctly  
+-The Wazuh agnet is successfully collecting and forwarding logs  
+-Failed authentication attempts are detectable within the SIEM  
+
+---
+
+### Evidence
+-Event Viewer showing Event ID 4625  
+-Wazuh Discovery view showing corresponding alerts  
+-Expanded log details with event fields
+
+---
+
+
+
 ## Author
 Sean M. Bonner
 
