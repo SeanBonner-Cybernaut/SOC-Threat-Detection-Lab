@@ -126,6 +126,54 @@ This simulation confirmed that:
 
 ---
 
+## Attack Simulation: Unauthorized User Creation & Privilege Escalation
+
+### Objective  
+Simulate attacker persistence by creating a new user account and elevating its privileges on a Windows 10 endpoint, and verify detection within the Wazuh SIEM.
+
+---
+
+### Method  
+User account creation and privilege escalation were performed using built-in Windows commands.  
+
+Steps:  
+1. Opened PowerShell as Administrator
+2. Created a new user account:
+   net user attacker Password123! /add
+3. Added the newly created user to the local Administrators group:
+   net localgroup administrators attacker /add
+   
+---
+
+### Detection
+
+The actions generated Windows Security Event Logs, which were successfully ingested by Wazuh.  
+
+ #### Event ID: 4720 - User Account Created  
+ -Indicates a new user account was created on the system  
+ -'TargetUserName': attacker
+
+ #### Event ID: 4732 - User Added to Privileged Group  
+ -Indicates a user was added to a security-enabled local group  
+ -Group: Administrators  
+ -'MemberName': attacker  
+
+ Additional oobserved fields:  
+ -'rule.description': User account created / User added to group
+ -'rule.level': 8  
+ -'agent.name':Win10-Lab  
+
+ ---
+
+ ### Outcome  
+ This simulation confirmed that:  
+ -Account creation and privilege escalation events are logged by Windows  
+ -Wazuh successfully detects and ingest these events  
+ -Privileged account changes are visible and can be monitored for suspicious activity  
+
+ ---  
+
+### Evidence
 
 
 ## Author
