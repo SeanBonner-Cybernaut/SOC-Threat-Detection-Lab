@@ -282,16 +282,22 @@ This simulation is a controlled network reconnaissance exercise performed in a v
   This scenario reflects a common real-world environment where attackers must progress beyond basic scanning to identify viable entry points.
 
   ### Evidence
-  
-![Hydra](Screenshots/Hydra.png)
+#### Determine the network the device is on  
 
-![Kali Device ID_ip a](Screenshots/Kali%20Device%20ID_ip%20a.png)
+![Kali Device ID_ip a](Screenshots/Kali%20Device%20ID_ip%20a.png)  
+
+#### Network Device Discovery
 
 ![Network Device Discovery_ip a](Screenshots/Network%20Device%20Discovery_ip%20a.png)
 
-![No event code](Screenshots/No%20event%20code.png)
+#### Password Cracking Attempt
 
-![Port 3389 is being filtered](Screenshots/Port%203389%20is%20being%20filtered.png)
+![Hydra](Screenshots/Hydra.png)
+
+#### No Event Code
+![No event code](Screenshots/No%20event%20code.png)  
+
+#### Port Reconnaissaince
 
 ![Port Reconnaissance](Screenshots/Port%20Reconnaissance.png)
  
