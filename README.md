@@ -282,11 +282,19 @@ This simulation is a controlled network reconnaissance exercise performed in a v
   This scenario reflects a common real-world environment where attackers must progress beyond basic scanning to identify viable entry points.
 
   ### Evidence
+  
+![Hydra](Screenshots/Hydra.png)
 
-    
- 
- 
+![Kali Device ID_ip a](Screenshots/Kali Device ID_ip a.png)
 
+![Network Device Discovery_ip a](Screenshots/Network Device Discovery_ip a.png)
+
+![No event code](Screenshots/No event code.png)
+
+![Port 3389 is being filtered](Screenshots/Port 3389 is being filtered.png)
+
+![Port Reconnaissance](Screenshots/Port Reconnaissance.png)
+ 
 ## Author
 Sean M. Bonner
 
