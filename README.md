@@ -173,7 +173,31 @@ The actions generated Windows Security Event Logs, which were successfully inges
 
  ---  
 
-### Evidence
+### Evidence  
+
+#### Attacker to Administrator
+![Attacker to Administrator_add](Screenshots/Attacker%20to%20Administrator_add.png)
+
+#### Event Viewer – 4720 User Created
+![Event Viewer 4720 User Created](Screenshots/Event%20Viewer%204720%20User%20Created.png)
+
+#### Event Viewer – 4732
+![Event Viewer 4732](Screenshots/Event%20Viewer%204732.png)
+
+#### New User Created
+![New User Created](Screenshots/New%20User%20Created.png)
+
+#### Wazuh Event Log 2
+![Wazuh Event Log 2](Screenshots/Wazuh%20Event%20Log%202.png)
+
+#### Wazuh Event Log 3
+![Wazuh Event Log 3](Screenshots/Wazuh%20Event%20Log%203.png)
+
+#### Wazuh Event Log
+![Wazuh Event Log](Screenshots/Wazuh%20Event%20Log.png)
+
+#### Wazuh Rule Level
+![Wazuh rule.level](Screenshots/Wazuh%20rule.level.png)
 
 ## Author
 Sean M. Bonner
