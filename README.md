@@ -205,6 +205,45 @@ The actions generated Windows Security Event Logs, which were successfully inges
 #### Wazuh Rule Level
 ![Wazuh rule.level](Screenshots/Wazuh%20rule.level.png)
 
+## Network & Device Reconnaisance
+
+### Overview
+This simulation is a controlled network reconnaissance exercise performed in a virtual SOC environment. The goal was to identify active hosts, assess network visibility, and evaluate exposed services on a Windows endpoint from a Kali attacker machine. The exercise demonstrates foundational SOC and penetration testing skills, focusing on **asset discovery, service enumeration, and firewall behavior analysis** within an isolated lab environment. 
+
+---
+
+### Environment
+-**Windows 10 Endpoint**
+  -Target system
+  -Security logging enabled (Windows Event Logs)
+-**Kali Linux Attacker Machine**
+  -Used for reconnaissance and network discovery
+  -Tools: Nmaps, ICMP utilities
+-**Wazuh SIEM (Ubuntu Server)**
+  -Centralized log collection and security monitoring
+  -used for validating detection of authenticaiton-related activity (where applicable)
+
+ ---
+
+ ### Objective
+ -Identify active hosts on the local subnet
+ -Validate network connectivity between attacker and target systems
+ -Perform TCP service discovery on the target endpoint
+ -Asses firewall filtering behavior and exposed services
+ -Establish baseline visibility for future attack simulation phases
+
+
+ ---
+
+ ### Reconnaissance Activities Performed
+
+ #### Determining Network
+ -Use ip a command to identify the network.
+
+ #### Host Discovery (ICMP Ping)
+ 
+ 
+
 ## Author
 Sean M. Bonner
 
