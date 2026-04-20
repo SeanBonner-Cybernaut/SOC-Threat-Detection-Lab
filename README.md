@@ -174,7 +174,11 @@ The actions generated Windows Security Event Logs, which were successfully inges
  ---  
 
 ### Evidence
-
+![Event 4625 Wazuh](Screenshots/Event%204625%20Wazuh.png)  
+![Eventvwr 4625](Screenshots/Eventvwr%204625.png)  
+![Fakeuser](Screenshots/Fakeuser.png)  
+![Rule level](Screenshots/Rule%20level.png)  
+![Wazuh Alerts](Screenshots/Wazuh%20Alerts.png)
 
 ## Author
 Sean M. Bonner
