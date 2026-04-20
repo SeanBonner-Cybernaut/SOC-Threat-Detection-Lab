@@ -285,15 +285,15 @@ This simulation is a controlled network reconnaissance exercise performed in a v
   
 ![Hydra](Screenshots/Hydra.png)
 
-![Kali Device ID_ip a](Screenshots/Kali Device ID_ip a.png)
+![Kali Device ID_ip a](Screenshots/Kali%20Device%20ID_ip%20a.png)
 
-![Network Device Discovery_ip a](Screenshots/Network Device Discovery_ip a.png)
+![Network Device Discovery_ip a](Screenshots/Network%20Device%20Discovery_ip%20a.png)
 
-![No event code](Screenshots/No event code.png)
+![No event code](Screenshots/No%20event%20code.png)
 
-![Port 3389 is being filtered](Screenshots/Port 3389 is being filtered.png)
+![Port 3389 is being filtered](Screenshots/Port%203389%20is%20being%20filtered.png)
 
-![Port Reconnaissance](Screenshots/Port Reconnaissance.png)
+![Port Reconnaissance](Screenshots/Port%20Reconnaissance.png)
  
 ## Author
 Sean M. Bonner
