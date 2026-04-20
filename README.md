@@ -232,7 +232,6 @@ This simulation is a controlled network reconnaissance exercise performed in a v
  -Asses firewall filtering behavior and exposed services
  -Establish baseline visibility for future attack simulation phases
 
-
  ---
 
  ### Reconnaissance Activities Performed
@@ -241,6 +240,50 @@ This simulation is a controlled network reconnaissance exercise performed in a v
  -Use ip a command to identify the network.
 
  #### Host Discovery (ICMP Ping)
+ Initial connectivity testing was performed to confirm the presence of the Windows endpoint.  
+
+ -Tool: Nmap host discovery scan.  
+ -Result: Windows host identified.
+
+ #### TCP Port Scanning
+-A full TCP Scan was performed against the Windows endpoint to evaluate exposed services.  
+
+-Result: All scanned TCP ports were reported as **filtered**  
+  -Windows Firewall is actively blocking inbound connection attempts
+  -No externally visible servises detected (e.g. RDP, SMB)
+
+  ---   
+
+  ### Services Exposure Analysis
+  Further validation confirmed that no standard Windows services were accessible externally from the scanning host. 
+
+  -No open ports identified  
+  -No services enumeration possible  
+  -Strong host-based firewall posture observed  
+
+  ---  
+
+  ### Key Findings
+  -The Windows endpoint is reachable at the network layer (ICMP allowed)  
+  -All TCP traffic is being filtered before reaching services  
+  -No External exposed services were identified during initial reconnaissance  
+  -Firewall configuration significantly reduces attack surface visibility  
+
+  ---  
+
+  ### Security Interpretation  
+  This lab demonstrates a realistic enterprise-style defensive posture where:  
+
+  -Hosts are discoverable but not directly exploitable  
+  -Network reconnaissance yields limited exposure  
+  -Firewall rules effectively prevent service enumeration  
+  -Attack surface visibility is minimized at the perimeter  
+
+  This scenario reflects a common real-world environment where attackers must progress beyond basic scanning to identify viable entry points.
+
+  ### Evidence
+
+    
  
  
 
