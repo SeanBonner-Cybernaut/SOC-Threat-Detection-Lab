@@ -201,83 +201,44 @@ Key fields:
 #### Wazuh Rule Level
 ![Wazuh rule.level](Screenshots/Wazuh%20rule.level.png)
 
-## Network & Device Reconnaisance
+## VIII. Attack Scenario 3 - Network & Device Reconnaisance
 
 ### Overview
-This simulation is a controlled network reconnaissance exercise performed in a virtual SOC environment. The goal was to identify active hosts, assess network visibility, and evaluate exposed services on a Windows endpoint from a Kali attacker machine. The exercise demonstrates foundational SOC and penetration testing skills, focusing on **asset discovery, service enumeration, and firewall behavior analysis** within an isolated lab environment. 
+Simulate attacker reconnaissance to identify hosts, services, and firewall behavior.
 
----
-
-### Environment
--**Windows 10 Endpoint**
-  -Target system
-  -Security logging enabled (Windows Event Logs)
--**Kali Linux Attacker Machine**
-  -Used for reconnaissance and network discovery
-  -Tools: Nmaps, ICMP utilities
--**Wazuh SIEM (Ubuntu Server)**
-  -Centralized log collection and security monitoring
-  -used for validating detection of authenticaiton-related activity (where applicable)
-
- ---
-
- ### Objective
- -Identify active hosts on the local subnet
- -Validate network connectivity between attacker and target systems
- -Perform TCP service discovery on the target endpoint
- -Asses firewall filtering behavior and exposed services
- -Establish baseline visibility for future attack simulation phases
-
- ---
-
- ### Reconnaissance Activities Performed
+### Reconnaissance Activities
 
  #### Determining Network
- -Use ip a command to identify the network.
+ - Use ip a command to identify the network.
 
  #### Host Discovery (ICMP Ping)
  Initial connectivity testing was performed to confirm the presence of the Windows endpoint.  
 
- -Tool: Nmap host discovery scan.  
- -Result: Windows host identified.
+ - Tool: Nmap host discovery scan.  
+ - Result: Windows host identified.
 
  #### TCP Port Scanning
--A full TCP Scan was performed against the Windows endpoint to evaluate exposed services.  
+- A full TCP Scan was performed against the Windows endpoint to evaluate exposed services.  
 
--Result: All scanned TCP ports were reported as **filtered**  
-  -Windows Firewall is actively blocking inbound connection attempts
-  -No externally visible servises detected (e.g. RDP, SMB)
-
-  ---   
-
-  ### Services Exposure Analysis
-  Further validation confirmed that no standard Windows services were accessible externally from the scanning host. 
-
-  -No open ports identified  
-  -No services enumeration possible  
-  -Strong host-based firewall posture observed  
-
-  ---  
-
+- Result: All scanned TCP ports were reported as **filtered**  
+  - Windows Firewall is actively blocking inbound connection attempts
+  - No externally visible servises detected (e.g. RDP, SMB)
+  - 
   ### Key Findings
-  -The Windows endpoint is reachable at the network layer (ICMP allowed)  
-  -All TCP traffic is being filtered before reaching services  
-  -No External exposed services were identified during initial reconnaissance  
-  -Firewall configuration significantly reduces attack surface visibility  
+  
+- Host reachable via ICMP
+- No externally exposed services
+- Firewall effectively blocks enumeration
+- Attack surface visibility minimized
+  
+  ### Security Interpretation
+This mirrors real enterprise environments where:
 
-  ---  
+- Hosts are visible but hardened
+- Attackers must escalate beyond basic scanning
+- Firewall posture significantly reduces exposure
 
-  ### Security Interpretation  
-  This lab demonstrates a realistic enterprise-style defensive posture where:  
-
-  -Hosts are discoverable but not directly exploitable  
-  -Network reconnaissance yields limited exposure  
-  -Firewall rules effectively prevent service enumeration  
-  -Attack surface visibility is minimized at the perimeter  
-
-  This scenario reflects a common real-world environment where attackers must progress beyond basic scanning to identify viable entry points.
-
-  ### Evidence
+### Evidence
 #### Determine the network the device is on  
 
 ![Kali Device ID_ip a](Screenshots/Kali%20Device%20ID_ip%20a.png)  
@@ -296,43 +257,19 @@ This simulation is a controlled network reconnaissance exercise performed in a v
 #### Port Reconnaissaince
 
 ![Port Reconnaissance](Screenshots/Port%20Reconnaissance.png)
- 
+
+## IX. Skills Demonstrated 
+
+This lab demonstrates hands‑on SOC analyst capabilities:
+
+- SIEM deployment & configuration
+- Endpoint monitoring (Windows + Sysmon)
+- Log ingestion troubleshooting
+- Detection engineering
+- Authentication event analysis
+- Privilege escalation detection
+- Network reconnaissance interpretation
+- Incident documentation & reporting
+
 ## Author
 Sean M. Bonner
-# Wazuh SIEM SOC Analyst Home Lab
-*A Complete End-to-End Detection Pipeline Case Study*
-
----
-
-## 1. Executive Summary
-
-This project demonstrates a fully functional Security Information and Event Management (SIEM) environment built using **Wazuh**, **Windows 10**, and **Kali Linux**.  
-
-The lab simulates a realistic SOC workflow:
-
-- An attacker performs reconnaissance  
-- Attempts unauthorized authentication  
-- Creates a persistence account  
-- Windows logs the activity  
-- Wazuh ingests, correlates, and alerts  
-- The analyst investigates and validates detections  
-
-This README documents the **end-to-end detection pipeline**, showcasing practical SOC analyst skills.
-
----
-
-## 2. Lab Architecture
-
-A three-machine virtual SOC environment:
-
-- **Kali Linux** — attacker machine (recon, brute force, enumeration)  
-- **Windows 10** — monitored endpoint (Sysmon + Wazuh agent)  
-- **Wazuh SIEM (Ubuntu 22.04)** — centralized log collection, indexing, alerting, and analysis  
-
-```text
-Kali (Attacker)
-      ↓
-Windows 10 (Endpoint → Sysmon → Wazuh Agent)
-      ↓
-Wazuh SIEM (Manager + Indexer + Dashboard)
-
