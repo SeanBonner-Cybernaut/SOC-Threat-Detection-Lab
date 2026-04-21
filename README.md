@@ -123,15 +123,14 @@ Even though the user was fake, the authentication subsystem logged it correctly.
 
 ---
 
-## Attack Simulation: Unauthorized User Creation & Privilege Escalation
+## VII. Attack Scenario 2 - Unauthorized User Creation & Privilege Escalation
 
 ### Objective  
-Simulate attacker persistence by creating a new user account and elevating its privileges on a Windows 10 endpoint, and verify detection within the Wazuh SIEM.
-
----
+Simulate attacker persistence by creating a privileged local account.
 
 ### Method  
-User account creation and privilege escalation were performed using built-in Windows commands.  
+net user attacker Password123! /add
+net localgroup administrators attacker /ad 
 
 Steps:  
 1. Opened PowerShell as Administrator
@@ -139,34 +138,40 @@ Steps:
    net user attacker Password123! /add
 3. Added the newly created user to the local Administrators group:
    net localgroup administrators attacker /add
-   
----
 
 ### Detection
 
-The actions generated Windows Security Event Logs, which were successfully ingested by Wazuh.  
+Windows generated:
+
+- Event ID 4720 — User Account Created
+- Event ID 4732 — User Added to Administrators Group
+- Wazuh assigned Alert Level 8
+
+Key fields:
+
+- TargetUserName: attacker
+- Group: Administrators
+- rule.description: User account created / User added to group
 
  #### Event ID: 4720 - User Account Created  
- -Indicates a new user account was created on the system  
- -'TargetUserName': attacker
+ - Indicates a new user account was created on the system  
+ - 'TargetUserName': attacker
 
  #### Event ID: 4732 - User Added to Privileged Group  
- -Indicates a user was added to a security-enabled local group  
- -Group: Administrators  
- -'MemberName': attacker  
+ - Indicates a user was added to a security-enabled local group  
+ - Group: Administrators  
+ - 'MemberName': attacker  
 
  Additional oobserved fields:  
- -'rule.description': User account created / User added to group
- -'rule.level': 8  
- -'agent.name':Win10-Lab  
-
- ---
+ - 'rule.description': User account created / User added to group
+ - 'rule.level': 8  
+ - 'agent.name':Win10-Lab  
 
  ### Outcome  
- This simulation confirmed that:  
- -Account creation and privilege escalation events are logged by Windows  
- -Wazuh successfully detects and ingest these events  
- -Privileged account changes are visible and can be monitored for suspicious activity  
+ 
+- Account creation logged ✔️
+- Privilege escalation logged ✔️
+- Wazuh detected both events ✔️
 
  ---  
 
