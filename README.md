@@ -178,7 +178,7 @@ Key fields:
 ### Evidence  
 
 #### Attacker to Administrator
-![Attacker to Administrator_add](Screenshots/Attacker%20to%20Administrator_add.png)
+![Attacker to Administrator_add](Screenshots/Attacker%20to%20Administrators_add.png)
 
 #### Event Viewer – 4720 User Created
 ![Event Viewer 4720 User Created](Screenshots/Event%20Viewer%204720%20User%20Created.png)
