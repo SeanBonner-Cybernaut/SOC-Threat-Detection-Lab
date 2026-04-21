@@ -23,10 +23,14 @@ A three‑machine virtual SOC environment:
 - Windows 10 — monitored endpoint (Sysmon + Wazuh agent)
 - Wazuh SIEM (Ubuntu 22.04) — centralized log collection, indexing, alerting, and analysis
 
-Kali (Attacker)
-      ↓
-Windows 10 (Endpoint → Sysmon → Wazuh Agent)
-      ↓
+Kali (Attacker)  
+
+      ↓  
+      
+Windows 10 (Endpoint → Sysmon → Wazuh Agent)  
+
+      ↓  
+      
 Wazuh SIEM (Manager + Indexer + Dashboard)
 
 ## III. Technology Stack
@@ -57,7 +61,7 @@ Wazuh SIEM (Manager + Indexer + Dashboard)
 - Downloaded and executed Wazuh installation script
 - Verified all services (manager, indexer, dashboard, filebeat)
 - Confirmed Windows agent connectivity
-- 
+
 ## V. Log Ingestion Verification
 
 Using Discover → Explore, Windows logs were confirmed to be flowing into Wazuh:
